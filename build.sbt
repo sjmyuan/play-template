@@ -1,12 +1,17 @@
-name := baseDirectory.value.getName
+name := """play-template"""
+organization := "com.fun"
+
 version := "1.0-SNAPSHOT"
-scalaVersion := "2.11.2"
 
-val scalazVersion = "7.1.0"
+lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-libraryDependencies ++= Seq(
-)
+scalaVersion := "2.11.8"
 
-scalacOptions += "-feature"
+libraryDependencies += filters
+libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test
 
-initialCommands in console := ""
+// Adds additional packages into Twirl
+//TwirlKeys.templateImports += "com.fun.controllers._"
+
+// Adds additional packages into conf/routes
+// play.sbt.routes.RoutesKeys.routesImport += "com.fun.binders._"
