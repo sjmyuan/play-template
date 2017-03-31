@@ -6,3 +6,5 @@ project/plugins/project/
 project/target
 logs/
 .DS_STORE
+node_modules/
+public/
