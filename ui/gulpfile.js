@@ -107,15 +107,7 @@ function dist() {
     merge(
       cssminRelease(),
       webpackRelease()
-    ).pipe(hash())
-    .pipe(mirror(
-        hash.manifest('generated/assets.json'),
-        rename(
-          function (path) {
-            path.dirname = path.dirname;
-          }
-        )
-      ));
+    );
   return merge(jsAndCss, copyImage());
 }
 
